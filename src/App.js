@@ -9,6 +9,13 @@ class App extends Component {
     gameUsers: [],
   };
 
+  handleAddUser = (gameUser) => {
+    gameUser.numGamesPlayed = 0;
+    this.setState((currentState) => ({
+      gameUsers: [...currentState.gameUsers, gameUser],
+    }));
+  };
+
   render() {
     return (
       <div className="App">
@@ -17,8 +24,8 @@ class App extends Component {
           <h2 className="App-title">React Nanodegree - Coding Practice by Udacity</h2>
         </header>
         <div>
-          <AddUser />
-          <UserList />
+          <AddUser gameUsers={this.state.gameUsers} onAddUser={this.handleAddUser} />
+          <UserList gameUsers={this.state.gameUsers} />
         </div>
       </div>
     );
