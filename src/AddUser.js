@@ -11,6 +11,7 @@ class AddUser extends Component {
       username: '',
     },
   };
+
   render() {
     return (
       <div>
