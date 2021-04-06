@@ -12,14 +12,45 @@ class AddUser extends Component {
     },
   };
 
+  handleInputChange = (event) => {
+    const { name, value } = event.target;
+    this.setState((currentState) => ({
+      ...currentState,
+      gameUser: {
+        ...currentState.gameUser,
+        [name]: value,
+      },
+    }));
+  };
+
   render() {
+    const { firstName, lastName, username } = this.state.gameUser;
+
     return (
       <div>
         <h1>New User</h1>
         <form onSubmit={this.addUser}>
-          <input type="text" name="firstName" placeholder="Enter First Name" />
-          <input type="text" name="lastName" placeholder="Enter Last Name" />
-          <input type="text" name="username" placeholder="Enter Username" />
+          <input
+            type="text"
+            name="firstName"
+            placeholder="Enter First Name"
+            value={firstName}
+            onChange={this.handleInputChange}
+          />
+          <input
+            type="text"
+            name="lastName"
+            placeholder="Enter Last Name"
+            value={lastName}
+            onChange={this.handleInputChange}
+          />
+          <input
+            type="text"
+            name="username"
+            placeholder="Enter Username"
+            value={username}
+            onChange={this.handleInputChange}
+          />
           <button>Add</button>
         </form>
       </div>
