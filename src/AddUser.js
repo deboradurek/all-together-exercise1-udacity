@@ -15,12 +15,23 @@ class AddUser extends Component {
   handleInputChange = (event) => {
     const { name, value } = event.target;
     this.setState((currentState) => ({
-      ...currentState,
       gameUser: {
         ...currentState.gameUser,
         [name]: value,
       },
     }));
+  };
+
+  addUser = (event) => {
+    event.preventDefault();
+    const checkUserExist = this.userExists(this.state.gameUser.username);
+
+    !checkUserExist ? this.props.onAddUser(this.state.gameUser) : alert('Username already exists.');
+  };
+
+  userExists = (currentUsername) => {
+    const user = this.props.gameUsers.find((gamer) => gamer.username === currentUsername);
+    return Boolean(user);
   };
 
   render() {
