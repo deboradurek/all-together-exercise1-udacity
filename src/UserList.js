@@ -10,11 +10,16 @@ class UserList extends Component {
   };
 
   render() {
+    const { gameUsers } = this.props;
+    const showGamesPlayed = this.state.showGamesPlayed;
+
     return (
       <div>
         <h3>List Of Users</h3>
         <ol>
-          <User />
+          {gameUsers.map((gameUser) => (
+            <User key={gameUser.username} gameUser={gameUser} showGamesPlayed={showGamesPlayed} />
+          ))}
         </ol>
       </div>
     );

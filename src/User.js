@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 const User = (props) => (
   <li className="user">
-    <p></p>
-    <p>Number of games played: </p>
+    <p>{props.gameUser.username}</p>
+    <p>Number of games played: {props.showGamesPlayed}</p>
   </li>
 );
 
