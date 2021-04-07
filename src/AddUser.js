@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class AddUser extends Component {
-  static propTypes = {};
+  static propTypes = {
+    gameUsers: PropTypes.array.isRequired,
+    onAddUser: PropTypes.func.isRequired,
+  };
 
   state = {
     gameUser: {

@@ -8,6 +8,9 @@ const User = (props) => (
   </li>
 );
 
-User.propTypes = {};
+User.propTypes = {
+  gameUser: PropTypes.object.isRequired,
+  showGamesPlayed: PropTypes.bool.isRequired,
+};
 
 export default User;

@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import User from './User';
 
 class UserList extends Component {
-  static propTypes = {};
+  static propTypes = {
+    gameUsers: PropTypes.array.isRequired,
+  };
 
   state = {
     showGamesPlayed: true,
