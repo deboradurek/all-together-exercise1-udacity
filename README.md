@@ -59,3 +59,11 @@ The page will reload if you make edits, and you will also see any lint errors in
 > components are able to pass data to back up to their parents, which are able to
 > modify their state. Props can go through multiple components to get to the
 > component they ultimately need to reach.
+
+### _Steps To Considerer When 'Thinking React'_:
+
+- _Step 1:_ Break down the app into a hierarchy of components. Draw a box around each React component.
+- _Step 2:_ Determine the data in our app.
+- _Step 3:_ Figure out the data that should be a part of our state.
+- _Step 4:_ Identify where each piece of state lives.
+- _Step 5:_ Add Inverse Data Flow.
