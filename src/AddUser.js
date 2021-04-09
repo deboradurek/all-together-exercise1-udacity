@@ -37,6 +37,11 @@ class AddUser extends Component {
     return Boolean(user);
   };
 
+  isDisabled = () => {
+    const { firstName, lastName, username } = this.state.gameUser;
+    return firstName === '' || lastName === '' || username === '';
+  };
+
   render() {
     const { firstName, lastName, username } = this.state.gameUser;
 
@@ -65,7 +70,7 @@ class AddUser extends Component {
             value={username}
             onChange={this.handleInputChange}
           />
-          <button>Add</button>
+          <button disabled={this.isDisabled()}>Add</button>
         </form>
       </div>
     );
